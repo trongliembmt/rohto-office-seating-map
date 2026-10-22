@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.75);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(236, 72, 153, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(236, 72, 153, 0);
+  }
+}
+
+@keyframes popup-scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes progress-fill-1200 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-popup-scale {
+  animation: popup-scale-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-progress-1200 {
+  animation: progress-fill-1200 1.2s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
+}
+
+.pin-match-pulse {
+  animation: pulse-ring 1.5s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+.canvas-grid-pattern {
+  background-color: #eef2f6;
+  background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
+}
+
+/* ➕ Force Crosshair cursor when in Add Desk Mode */
+.add-mode-active,
+.add-mode-active * {
+  cursor: crosshair !important;
+}
+
+/* 🏷️ Crisp Hardware-Accelerated Desk Badge Text Rendering */
+.desk-pill-badge {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Ẩn spinner trên Floating Mini Toolbar */
+.floating-toolbar input[type="number"]::-webkit-outer-spin-button,
+.floating-toolbar input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.floating-toolbar input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  text-align: center;
+}
+
+
