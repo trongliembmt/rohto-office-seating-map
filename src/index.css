@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.75);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(236, 72, 153, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(236, 72, 153, 0);
+  }
+}
+
+@keyframes popup-scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes progress-fill-1200 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-popup-scale {
+  animation: popup-scale-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-progress-1200 {
+  animation: progress-fill-1200 1.2s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
+}
+
+.pin-match-pulse {
+  animation: pulse-ring 1.5s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+.canvas-grid-pattern {
+  background-color: #eef2f6;
+  background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
+}
+
+/* ➕ Force Crosshair cursor when in Add Desk Mode */
+.add-mode-active,
+.add-mode-active * {
+  cursor: crosshair !important;
+}
+
+/* Container bọc ngoài sơ đồ với khử răng cưa và độ tương phản cao */
+.map-canvas-container {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* 🏷️ Tinh gọn Hitbox & Render sắc nét nhãn bàn */
+.desk-pin {
+  pointer-events: none !important;
+}
+
+.desk-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 2px 4px;
+  margin: 0;
+  pointer-events: auto !important;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.desk-pill-badge:not(.ring-2):not(.ring-4):not(.shadow-xl):not(.shadow-2xl) {
+  box-shadow: none !important;
+}
+
+.desk-pill-item {
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform, left, top;
+}
+
+/* Ẩn spinner trên Floating Mini Toolbar & Bottom Action Bar */
+.floating-toolbar input[type="number"]::-webkit-outer-spin-button,
+.floating-toolbar input[type="number"]::-webkit-inner-spin-button,
+.bottom-action-bar input[type="number"]::-webkit-outer-spin-button,
+.bottom-action-bar input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.floating-toolbar input[type="number"],
+.bottom-action-bar input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  text-align: center;
+}
+
+/* 📱 Ngăn chặn hành vi cuộn nảy hoặc zoom mặc định của trình duyệt trên canvas bản đồ */
+.canvas-touch-container {
+  touch-action: none !important;
+  overscroll-behavior: none !important;
+  -webkit-touch-callout: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+
