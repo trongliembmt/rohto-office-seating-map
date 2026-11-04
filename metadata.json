@@ -1,0 +1,6 @@
+{
+  "name": "Rohto Office Seating Map",
+  "description": "Interactive Office Seating Map with Figma-like canvas navigation, RBAC authentication, and department management for Rohto Office Layout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
